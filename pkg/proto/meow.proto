@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/kshvyryaev/cyber-meower-proto/pkg/proto";
+
+message CreateMeowRequest {
+    string Body = 1;
+}
+
+message CreateMeowResponse {
+    int64 ID = 1;
+}
+
+service MeowService {
+    rpc Create(CreateMeowRequest) returns (CreateMeowResponse) {}
+}
